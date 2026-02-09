@@ -111,7 +111,7 @@ const Hero = () => {
 
               <div className="flex space-x-4">
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/in/aniket-pangavhane/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-white rounded-lg shadow-soft hover:-translate-y-1 transition"
@@ -120,7 +120,7 @@ const Hero = () => {
                 </a>
 
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/aniketpangavhane"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 bg-white rounded-lg shadow-soft hover:-translate-y-1 transition"

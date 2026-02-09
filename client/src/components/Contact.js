@@ -69,7 +69,7 @@ const Contact = () => {
       ),
       title: "LinkedIn",
       value: "LinkedIn Profile",
-      href: "www.linkedin.com/in/aniket-pangavhane"
+      href: "https://www.linkedin.com/in/aniket-pangavhane/"
     },
     {
       icon: (
