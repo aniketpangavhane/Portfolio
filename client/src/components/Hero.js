@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import myPhoto from "../assets/My_Photo.png";
 
+// Roles outside component (constant)
+const roles = [
+  'Backend Developer',
+  'Node.js Developer',
+  'API Engineer',
+  'AR/VR Developer'
+];
+
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // ✅ Updated Roles
-  const roles = [
-    'Backend Developer',
-    'Node.js Developer',
-    'API Engineer',
-    'AR/VR Developer'
-  ];
-
-  // Typing Animation
+  // ✅ ESLint disabled for dependency warning
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const currentRole = roles[currentIndex];
     let charIndex = 0;
@@ -24,6 +25,7 @@ const Hero = () => {
         charIndex++;
       } else {
         clearInterval(typeInterval);
+
         setTimeout(() => {
           const deleteInterval = setInterval(() => {
             if (charIndex > 0) {
@@ -39,7 +41,7 @@ const Hero = () => {
     }, 100);
 
     return () => clearInterval(typeInterval);
-  }, [roles]);
+  }, [currentIndex]);
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
@@ -152,7 +154,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* ✅ FIXED STATS SECTION */}
+        {/* STATS */}
         <div className="grid grid-cols-3 gap-8 py-8 border-t border-secondary-200">
 
           <div className="text-center">
