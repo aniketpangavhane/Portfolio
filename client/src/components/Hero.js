@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import myPhoto from "../assets/My_Photo.png";
 
+// ✅ MOVE roles OUTSIDE component (important)
+const roles = [
+  'Full-Stack Developer',
+  'MERN Stack Developer',
+  'Frontend Developer',
+  'Backend Developer'
+];
+
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const roles = ['Full-Stack Developer', 'MERN Stack Developer', 'Frontend Developer', 'Backend Developer'];
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const currentRole = roles[currentIndex];
     let charIndex = 0;
@@ -16,6 +24,7 @@ const Hero = () => {
         charIndex++;
       } else {
         clearInterval(typeInterval);
+
         setTimeout(() => {
           const deleteInterval = setInterval(() => {
             if (charIndex > 0) {
@@ -132,7 +141,6 @@ const Hero = () => {
                 className="rounded-full w-80 h-80 object-cover border-4 border-white shadow-lg"
               />
 
-              {/* Floating Icons */}
               <div className="absolute -top-4 -right-4 bg-primary-500 text-white px-3 py-1 rounded-full text-sm">
                 JS
               </div>
