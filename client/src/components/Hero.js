@@ -39,7 +39,7 @@ const Hero = () => {
     }, 100);
 
     return () => clearInterval(typeInterval);
-  }, [currentIndex]);
+  }, [roles]);
 
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
