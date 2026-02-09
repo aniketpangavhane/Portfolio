@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import myPhoto from "../assets/My_Photo.png";
 
-// Roles outside component (constant)
-const roles = [
-  'Backend Developer',
-  'Node.js Developer',
-  'API Engineer',
-  'AR/VR Developer'
-];
-
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const roles = ['Full-Stack Developer', 'MERN Stack Developer', 'Frontend Developer', 'Backend Developer'];
 
-  // ✅ ESLint disabled for dependency warning
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const currentRole = roles[currentIndex];
     let charIndex = 0;
@@ -25,7 +16,6 @@ const Hero = () => {
         charIndex++;
       } else {
         clearInterval(typeInterval);
-
         setTimeout(() => {
           const deleteInterval = setInterval(() => {
             if (charIndex > 0) {
@@ -33,7 +23,7 @@ const Hero = () => {
               charIndex--;
             } else {
               clearInterval(deleteInterval);
-              setCurrentIndex((prev) => (prev + 1) % roles.length);
+              setCurrentIndex((prevIndex) => (prevIndex + 1) % roles.length);
             }
           }, 50);
         }, 2000);
